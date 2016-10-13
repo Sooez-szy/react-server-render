@@ -5,7 +5,7 @@ var webpack = require('webpack');
 var path = require('path');
 module.exports = [{
     devtool: 'sourcemap',
-    entry:['webpack/hot/poll?1000',__dirname + '/app/main.js'],
+    entry:[__dirname + '/app/main.js'],
     output:{
         path:__dirname + '/public/js',
         filename:'bundle.js'
@@ -32,14 +32,11 @@ module.exports = [{
                 test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
                 loader: "url?limit=8192"
             }
-        ],
-        plugins: [
-            new webpack.HotModuleReplacementPlugin()
         ]
     }
 },{
     devtool: 'sourcemap',
-    entry:['webpack/hot/poll?1000',__dirname + '/server/page.js'],
+    entry:[__dirname + '/server/page.js'],
     output:{
         path:__dirname+'/server',
         filename:'page.generated.js',
@@ -68,9 +65,6 @@ module.exports = [{
                 test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
                 loader: "url?limit=8192"
             }
-        ],
-        plugins: [
-            new webpack.HotModuleReplacementPlugin()
         ]
     }
 }
