@@ -5,10 +5,10 @@ var webpack = require('webpack');
 var path = require('path');
 module.exports = [{
     devtool: 'sourcemap',
-    entry:[__dirname + '/app/main.js'],
-    output:{
-        path:__dirname + '/public/js',
-        filename:'bundle.js'
+    entry: [__dirname + '/app/main.js'],
+    output: {
+        path: __dirname + '/public/js',
+        filename: 'bundle.js'
     },
     module: {//在配置文件里添加JSON loader
         loaders: [
@@ -17,7 +17,7 @@ module.exports = [{
                 exclude: /node_modules/,
                 loader: 'babel',//在webpack的module部分的loaders里进行配置即可
                 query: {
-                    presets: ['es2015','react']
+                    presets: ['es2015', 'react']
                 }
             },
             {
@@ -30,19 +30,19 @@ module.exports = [{
             },
             {
                 test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
-                loader: "url?limit=8192"
+                loader: "url?"
             }
         ]
     }
-},{
+}, {
     devtool: 'sourcemap',
-    entry:[__dirname + '/server/page.js'],
-    output:{
-        path:__dirname+'/server',
-        filename:'page.generated.js',
+    entry: [__dirname + '/server/page.js'],
+    output: {
+        path: __dirname + '/server',
+        filename: 'page.generated.js',
         libraryTarget: "commonjs2"
     },
-    target:'node',
+    target: 'node',
     module: {//在配置文件里添加JSON loader
         loaders: [
             {
@@ -50,7 +50,7 @@ module.exports = [{
                 exclude: /node_modules/,
                 loader: 'babel',//在webpack的module部分的loaders里进行配置即可
                 query: {
-                    presets: ['es2015','react']
+                    presets: ['es2015', 'react']
                 }
             },
             {
@@ -63,9 +63,9 @@ module.exports = [{
             },
             {
                 test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
-                loader: "url?limit=8192"
+                loader: "url?"
             }
         ]
     }
 }
-]
+];

@@ -4,7 +4,7 @@
 import React from 'react';
 import {renderToString} from 'react-dom/server';
 import swig from 'swig';
-import {RoutingContext, match} from 'react-router';
+import {RouterContext, match} from 'react-router';
 import routes from '../app/routes';
 
 module.exports = (req, res)=>{
@@ -15,7 +15,7 @@ module.exports = (req, res)=>{
             res.redirect(redirectLocation.pathname + redirectLocation.search);
         } else if (renderProps) {
             const html = renderToString(
-                <RoutingContext {...renderProps} />
+                <RouterContext {...renderProps} />
             );
             const page = swig.renderFile('views/index.html', {html: html});
             res.send(page)
