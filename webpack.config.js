@@ -13,6 +13,10 @@ module.exports = [{
     module: {//在配置文件里添加JSON loader
         loaders: [
             {
+                test: /\.json$/,
+                loader: "json"
+            },
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: 'babel',//在webpack的module部分的loaders里进行配置即可
@@ -45,6 +49,10 @@ module.exports = [{
     target: 'node',
     module: {//在配置文件里添加JSON loader
         loaders: [
+            {
+                test: /\.json$/,
+                loader: "json"
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
